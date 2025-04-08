@@ -57,11 +57,10 @@ document.addEventListener("DOMContentLoaded", () => {
 // Check for the email send result in storage
 async function checkEmailStatus(sendBtn) {
   let result = null;
-  // Wait for the result to be stored in chrome.storage.local
   while (result === null) {
     result = await new Promise((resolve) => {
       chrome.storage.local.get("emailSendResult", (data) => {
-        resolve(data.emailSendResult);
+        resolve(data.emailSendResult); // Directly access the result object
       });
     });
 
@@ -71,14 +70,14 @@ async function checkEmailStatus(sendBtn) {
     }
   }
 
-  // Handle the result
+  // Handle the result once it's available
   sendBtn.disabled = false;
   if (result.success) {
-    alert("✅ Email sent!");
+    alert("Email sent!");
     window.close();  // Close popup after successful send
   } else {
     console.error("Failed to send email:", result.error);
-    alert(`❌ Failed to send email: ${result.error || "Unknown error"}`);
+    alert(`Failed to send email: ${result.error || "Unknown error"}`);
   }
 }
 
@@ -160,7 +159,7 @@ function clearAllData() {
   // Clear LocalStorage
   clearLocalStorage();
 
-  alert("✅ All data has been cleared and reset.");
+  alert("All data has been cleared and reset.");
 }
 
 // Clear OAuth token manually
@@ -170,7 +169,7 @@ function clearOAuthToken() {
       console.log("No cached token found.");
     } else {
       chrome.identity.removeCachedAuthToken({ token: token }, () => {
-        console.log("✅ OAuth token cleared.");
+        console.log("OAuth token cleared.");
       });
     }
   });
@@ -179,11 +178,11 @@ function clearOAuthToken() {
 // Clear all storage data (localStorage, chrome.storage)
 function clearStorage() {
   chrome.storage.local.clear(() => {
-    console.log("✅ All storage data cleared.");
+    console.log("All storage data cleared.");
   });
 }
 
 function clearLocalStorage() {
   localStorage.clear();
-  console.log("✅ LocalStorage cleared.");
+  console.log("LocalStorage cleared.");
 }
