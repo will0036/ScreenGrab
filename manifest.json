@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "Gmail Webpage Sender",
+    "version": "1.0",
+    "description": "Send cleaned webpage content via Gmail directly from a Chrome Extension.",
+    "permissions": [
+      "identity",
+      "storage",
+      "scripting",
+      "activeTab"
+    ],
+    "host_permissions": [
+      "<all_urls>"
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "assets/icon.png"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "oauth2": {
+      "client_id": "941949518970-rdt9af79tqmm0gnpa0svjq9m56h52vlr.apps.googleusercontent.com",
+      "scopes": [
+        "https://www.googleapis.com/auth/gmail.send",
+        "https://www.googleapis.com/auth/gmail.readonly"
+      ]
+    },
+    "icons": {
+      "128": "assets/icon.png"
+    }
+  }
