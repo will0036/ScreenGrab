@@ -3,6 +3,7 @@
 <head>
   <title>Send Page via Gmail</title>
   <link rel="stylesheet" href="stylesheet.css">
+  <script src="libs/jsPDF-3.0.1/dist/jspdf.umd.min.js"></script>
 </head>
 <body>
   <h1>Send Page</h1>
@@ -13,6 +14,7 @@
   <input type="text" id="subject" placeholder="Subject" />
   <textarea id="message" placeholder="Message body (auto-filled)"></textarea>
   <button id="grabContent">Grab Page Content</button>
+  <label><input type="checkbox" id="sendAsPdf" />Send as PDF</label>
   <button id="sendEmail">Send Email</button>
   <button id="clearData">Clear Data</button>
 
