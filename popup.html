@@ -6,17 +6,22 @@
   <script src="libs/jsPDF-3.0.1/dist/jspdf.umd.min.js"></script>
 </head>
 <body>
-  <h1>Send Page</h1>
-  <p id="currentUser">Loading account...</p>
-  <label for="emailInput">To:</label>
-  <input type="email" id="emailInput" list="emailList" placeholder="example@example.com" />
-  <datalist id="emailList"></datalist>
-  <input type="text" id="subject" placeholder="Subject" />
-  <textarea id="message" placeholder="Message body (auto-filled)"></textarea>
-  <button id="grabContent">Grab Page Content</button>
-  <label><input type="checkbox" id="sendAsPdf" />Send as PDF</label>
-  <button id="sendEmail">Send Email</button>
-  <button id="clearData">Clear Data</button>
+  <div class="popup-container">
+    <h1>Send Page</h1>
+    <p id="currentUser">Loading account...</p>
+    <label for="emailInput">To:</label>
+    <input type="email" id="emailInput" list="emailList" placeholder="example@example.com" />
+    <datalist id="emailList"></datalist>
+    <input type="text" id="subject" placeholder="Subject" />
+    <textarea id="message" placeholder="Message body (auto-filled)"></textarea>
+    <button id="grabContent">Grab Page Content</button>
+    <div id="sendAsPdfLabel">
+      <label for="sendAsPdf">Send as PDF</label>
+      <input type="checkbox" id="sendAsPdf" />
+    </div>
+    <button id="sendEmail">Send Email</button>
+    <button id="clearData">Clear Data</button>
+  </div>
 
   <script src="popup.js"></script>
 </body>

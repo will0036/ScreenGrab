@@ -9,9 +9,6 @@
       "scripting",
       "activeTab"
     ],
-    "host_permissions": [
-      "<all_urls>"
-    ],
     "action": {
       "default_popup": "popup.html",
       "default_icon": "assets/icon.png"
@@ -20,9 +17,10 @@
       "service_worker": "background.js"
     },
     "oauth2": {
-      "client_id": "941949518970-5qatfs2tb2n11p7vf3ptpinqlmihqbb9.apps.googleusercontent.com",
+      "client_id": "941949518970-rdt9af79tqmm0gnpa0svjq9m56h52vlr.apps.googleusercontent.com",
       "scopes": [
         "https://www.googleapis.com/auth/gmail.send",
+        "https://www.googleapis.com/auth/gmail.modify",
         "https://www.googleapis.com/auth/gmail.readonly"
       ]
     },

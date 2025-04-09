@@ -1,12 +1,80 @@
 body {
-    font-family: sans-serif;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f4f4f9;
+    width: 350px; /* Increased width */
+}
+
+h1 {
+    font-size: 20px;
+    color: #333;
+    text-align: center;
+}
+
+input, textarea, button {
     padding: 10px;
-    width: 300px;
-  }
-  
-  input, textarea, select, button {
-    width: 100%;
     margin: 5px 0;
-    padding: 6px;
-    box-sizing: border-box;
-  }
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    height: 100px;
+}
+
+button {
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:disabled {
+    background-color: #ccc;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block; /* Ensure the label is block-level */
+}
+
+/* Align checkbox and label horizontally */
+#sendAsPdfLabel {
+    display: flex;
+    align-items: center;
+}
+
+#sendAsPdfLabel input {
+    margin-right: 8px; /* Space between checkbox and label */
+}
+
+#clearData {
+    background-color: #f44336;
+}
+
+#clearData:hover {
+    background-color: #d32f2f;
+}
+
+/* Make the popup wider */
+.popup-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Style for buttons for uniformity */
+button {
+    margin-top: 10px;
+    width: 100%;
+}
+
+/* Adjust the email input field and buttons for better usability */
+#emailInput,
+#subject,
+#message {
+    width: calc(100% - 20px); /* Ensure the inputs fill up space and have padding */
+}
